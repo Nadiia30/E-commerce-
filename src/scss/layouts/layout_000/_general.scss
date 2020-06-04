@@ -1,0 +1,511 @@
+// ----- base
+body {
+  font-family: $fontFamily;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3px;
+}
+
+// ----- header
+
+.header {
+  padding-bottom: 208px;
+  background: $headerBgColor;
+  background-size: contain;
+
+  @include e(logo) {
+    text-indent: -9999px;
+    font-size: 0;
+    position: relative;
+
+    @include before(27px, 27px, 14px, 27px) {
+      background: url(#{$imgPath}logo_small.png) no-repeat;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 12px;
+      position: absolute;
+      top: 15px;
+      right: 37px;
+      background: url(#{$imgPath}menu_btn.png) no-repeat;
+    }
+  }
+}
+.header-menu {
+  display: none;
+}
+.header-icons {
+  display: none;
+}
+
+//----- main
+
+.post {
+  padding: 35px 19px;
+
+  @include m(third) {
+    background: url(#{$imgPath}post-third_bg_mobile.png) no-repeat;
+    background-size: cover;
+  }
+  @include m(fourth) {
+    background-color: $fourthPostBgColor;
+  }
+}
+.post-image {
+  text-align: center;
+}
+.img {
+  margin-bottom: 20px;
+  @include m(first) {
+    margin-top: -243px;
+  }
+}
+.desktop-img {
+  display: none;
+}
+.post-text {
+  @include e(title) {
+    margin: 0;
+    font-weight: 500;
+    font-size: rem(16px);
+    color: $black;
+    margin-bottom: 7px;
+    @include m(first) {
+      letter-spacing: 1px;
+    }
+    @include m(third) {
+      color: $textDescriptionColor;
+    }
+    @include m(fourth) {
+      color: $textDescriptionColor;
+      margin-bottom: 12px;
+    }
+  }
+
+  @include e(description) {
+    margin: 0;
+    font-size: rem(32px);
+    font-weight: 700;
+    color: $textDescriptionColor;
+    margin-bottom: rem(22px);
+    @include m(first) {
+      color: $black;
+      text-shadow: 0 4px 4px rgba($black, 0.25);
+    }
+    @include m(third) {
+      text-transform: uppercase;
+    }
+    @include m(fourth) {
+      text-transform: uppercase;
+    }
+  }
+  @include e(info) {
+    margin: 0;
+    color: $postTextInfoColor;
+    font-size: rem(14px);
+    margin-bottom: 10px;
+    @include m(third) {
+      margin-bottom: 29px;
+    }
+    @include m(fourth) {
+      margin-bottom: 42px;
+    }
+  }
+
+  @include e(plus) {
+    vertical-align: 10px;
+    font-weight: 500;
+    font-size: 40px;
+  }
+  @include e(sup-x) {
+    text-transform: none;
+    vertical-align: 10px;
+    font-size: 16px;
+  }
+  @include e(bonus) {
+    margin: 0;
+    font-weight: 500;
+    font-size: rem(13px);
+    line-height: 18px;
+    opacity: 0.68;
+
+    @include m(third) {
+      color: $white;
+      opacity: 0.9;
+    }
+    @include m(fourth) {
+      color: $fourthPostBonusTextColor;
+    }
+  }
+}
+// ----- form-price
+.form-price {
+  @include e(label) {
+    margin: 0;
+    font-size: rem(32px);
+    font-weight: 400;
+    color: $black;
+    vertical-align: -6px;
+    line-height: 39px;
+    margin-right: 10px;
+    @include m(gold) {
+      font-size: rem(25px);
+      font-weight: 600;
+      vertical-align: -4px;
+      color: $contentBoxPriceColor;
+      padding-bottom: 32px;
+      padding-left: 25px;
+      padding-right: 10px;
+    }
+  }
+  @include e(btn) {
+    width: 145px;
+    height: 41px;
+    background-color: $black;
+    color: $white;
+    text-transform: uppercase;
+    font-size: rem(14px);
+    font-weight: 600;
+    line-height: 17px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+    &:focus {
+      background: $fourthPostBonusTextColor;
+    }
+    @include m(yellow) {
+      width: 146px;
+      height: 36px;
+      background: $btnYellowColor;
+      color: $black;
+      &:focus {
+        background: $btnYellowFocusColor;
+      }
+    }
+    @include m(third) {
+      width: 146px;
+      height: 36px;
+    }
+    @include m(fourth) {
+      width: 146px;
+      height: 36px;
+    }
+  }
+}
+// ----- form-radio
+
+.form-radio {
+  color: $textDescriptionColor;
+  padding-left: 6px;
+  margin-bottom: 40px;
+  position: relative;
+  &__title {
+    margin: 0;
+    font-size: rem(32px);
+    font-weight: 400;
+    margin-bottom: rem(21px);
+  }
+  &__color {
+    margin: 0;
+    font-size: rem(16px);
+    padding-bottom: rem(14px);
+    color: $textDescriptionColor;
+  }
+  &__circle {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 37px;
+    height: 37px;
+    top: 90px;
+    &_tomato {
+      left: 50px;
+    }
+    &_black {
+      left: 94px;
+    }
+  }
+}
+
+.form-radio__circle + .form-radio__label {
+  position: relative;
+  padding: 0 0 0 35px;
+  cursor: pointer;
+}
+.form-radio__circle_white + .form-radio__label_white:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+  background: #fff;
+}
+.form-radio__circle_tomato + .form-radio__label_tomato:before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+  background: #dd5656;
+}
+.form-radio__circle_black + .form-radio__label_black:before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+  background: #000;
+}
+
+.form-radio__circle_white + .form-radio__label:after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.2s;
+}
+.form-radio__circle_tomato + .form-radio__label:after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 4px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.2s;
+}
+.form-radio__circle_black + .form-radio__label:after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 13px;
+  width: 45px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.2s;
+}
+.form-radio__circle:checked + .form-radio__label:after {
+  opacity: 1;
+}
+
+// ----- content-box
+
+.box-item {
+  margin: 15px;
+  padding: 30px 10px 27px 25px;
+  background-color: $contentBoxBgColor;
+  &__image {
+    display: block;
+    position: relative;
+  }
+  &__pic {
+    position: absolute;
+
+    &_first {
+      left: 26px;
+    }
+    &_second {
+      right: 15px;
+    }
+
+    &_fourth {
+      right: 21px;
+    }
+    &_sixth {
+      right: 22px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: rem(40px);
+    font-weight: 500;
+    color: $textDescriptionColor;
+    line-height: 55px;
+    margin-bottom: 10px;
+    padding-top: 315px;
+    padding-right: 10px;
+  }
+  &__sup-x {
+    vertical-align: 13px;
+    font-size: 20px;
+  }
+  &__description {
+    margin: 0;
+    padding-right: 10px;
+    font-size: rem(14px);
+    font-weight: 400;
+    line-height: 21px;
+    color: $postTextInfoColor;
+    &:last-of-type {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.signup-box {
+  background: $contentBoxBgColor;
+  margin: 16px 14px 47px 15px;
+  padding: 39px 22px 64px 21px;
+  text-align: center;
+  @include e(title) {
+    margin: 0;
+    line-height: 55px;
+    font-size: rem(32px);
+    font-weight: 700;
+    color: $textDescriptionColor;
+    margin-bottom: 11px;
+  }
+  @include e(text) {
+    margin: 0;
+    font-size: rem(14px);
+    font-weight: 400;
+    line-height: 17px;
+    color: $postTextInfoColor;
+    margin-bottom: 30px;
+  }
+}
+.signup-form {
+  @include display(flex);
+  flex-direction: column;
+  align-items: center;
+  @include e(control) {
+    width: 298px;
+    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid $borderSignUpForm;
+    border-radius: 18px;
+    color: $postTextInfoColor;
+    margin-bottom: 19px;
+    &:focus {
+      border: 1px solid $borderSignUpForm;
+      border-radius: 18px;
+      font-size: 14px;
+      box-shadow: 1px 1px 5px 2px gray;
+    }
+  }
+  @include e(button) {
+    width: 298px;
+    background: $btnYellowColor;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $black;
+    padding: 12px;
+    border-radius: 20px;
+    &:focus {
+      background: $btnYellowFocusColor;
+    }
+  }
+}
+
+// ----- footer
+
+.footer {
+  padding-top: 131px;
+  background: $headerBgColor;
+}
+
+.col-1,
+.col-2,
+.col-3 {
+  @include e(title) {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: $white;
+    padding-left: 26px;
+    position: relative;
+    @include m(first) {
+      margin-bottom: 8px;
+      @include before(50px, 50px, -101px, 160px) {
+        background: url(#{$imgPath}logo_big.png) no-repeat;
+      }
+    }
+  }
+}
+.col-2,
+.col-3 {
+  padding-top: 6px;
+  padding-bottom: 12px;
+  border-top: 0.5px solid $black;
+}
+.col-3 {
+  border-bottom: 0.5px solid $black;
+}
+.footer-menu {
+  &__item {
+    margin-bottom: 8px;
+    &:first-of-type {
+      display: none;
+    }
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+  &__link {
+    padding-left: 26px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $footerMenuLinkColor;
+  }
+}
+
+.footer-menu_second,
+.footer-menu_third {
+  display: none;
+}
+
+.social-box {
+  padding: 15px 30px 36px 26px;
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: $white;
+    line-height: 31px;
+    margin-bottom: 14px;
+  }
+  &__item {
+    color: $headerBgColor;
+  }
+  &__icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+}
+
+.footer__copy {
+  display: none;
+}

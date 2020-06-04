@@ -1,0 +1,63 @@
+@function em($target, $current: $baseFontSize) {
+  @return ($target / $current) * 1em;
+}
+
+@function rem($target) {
+  @return ($target / $baseFontSize) * 1rem;
+}
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  &_#{$modifier} {
+    @content;
+  }
+}
+
+@mixin mq($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin before($w, $h, $t, $l) {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: $w;
+    height: $h;
+    top: $t;
+    left: $l;
+    @content;
+  }
+}
+
+@mixin after($w, $h, $t, $l) {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: $w;
+    height: $h;
+    top: $t;
+    left: $l;
+    @content;
+  }
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  @content;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  @content;
+}

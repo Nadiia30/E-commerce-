@@ -1,0 +1,27 @@
+// ----- main
+.post {
+  text-align: center;
+}
+
+.box-item {
+  &__pic {
+    &_first {
+      left: 157px;
+    }
+    &_second {
+      right: 100px;
+    }
+    &_third {
+      left: 150px;
+    }
+    &_fourth {
+      right: 105px;
+    }
+    &_fifth {
+      right: 105px;
+    }
+    &_sixth {
+      right: 105px;
+    }
+  }
+}

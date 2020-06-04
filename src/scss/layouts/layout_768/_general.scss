@@ -1,0 +1,48 @@
+// ----- main
+.content-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.box-item {
+  margin: 0;
+  margin-bottom: 15px;
+  flex: 0 0 45%;
+  @include e(pic) {
+    @include m(first) {
+      left: 26px;
+    }
+    @include m(second) {
+      right: 15px;
+    }
+    @include m(third) {
+      left: 10px;
+    }
+    @include m(fourth) {
+      right: 21px;
+    }
+    @include m(fifth) {
+      right: 22px;
+    }
+    @include m(sixth) {
+      right: 22px;
+    }
+  }
+}
+
+// ----- foooter
+.footer {
+  text-align: center;
+}
+.col-1 {
+  @include e(title) {
+    @include m(first) {
+      @include before(50px, 50px, -101px, 380px);
+    }
+  }
+}
+.social-box {
+  padding-right: 0;
+}
