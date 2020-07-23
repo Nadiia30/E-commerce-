@@ -55,7 +55,7 @@
     margin-right: 47px;
     width: 25px;
     height: 25px;
-    color: white;
+    --icon-color: white;
     &:hover {
       transform: scale(1.1);
     }
@@ -64,7 +64,7 @@
     margin-right: 47px;
     width: 27px;
     height: 27px;
-    color: white;
+    --icon-color: white;
     &:hover {
       transform: scale(1.1);
     }
@@ -73,7 +73,7 @@
     margin-right: 0;
     width: 27px;
     height: 25px;
-    color: white;
+    --icon-color: white;
     &:hover {
       transform: scale(1.1);
     }
