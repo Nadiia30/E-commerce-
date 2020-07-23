@@ -5,7 +5,7 @@
   @include display(flex);
   position: relative;
   z-index: 1;
-  opacity: 85%;
+  // opacity: 85%;
   background: $headerNavColor;
   @include e(logo) {
     @include before(50px, 50px, 14px, 70px) {
@@ -55,7 +55,7 @@
     margin-right: 47px;
     width: 25px;
     height: 25px;
-    --icon-color: white;
+    --icon-color: #fff;
     &:hover {
       transform: scale(1.1);
     }
@@ -64,7 +64,7 @@
     margin-right: 47px;
     width: 27px;
     height: 27px;
-    --icon-color: white;
+    --icon-color: #fff;
     &:hover {
       transform: scale(1.1);
     }
@@ -73,7 +73,7 @@
     margin-right: 0;
     width: 27px;
     height: 25px;
-    --icon-color: white;
+    --icon-color: #fff;
     &:hover {
       transform: scale(1.1);
     }
@@ -364,19 +364,19 @@
   }
   &__icon {
     &_ig:hover {
-      color: #e70dca;
+      --socialstroke-color: #e70dca;
       transform: scale(1.2);
     }
     &_fb:hover {
-      color: #110988;
+      --socialstroke-color: #110988;
       transform: scale(1.2);
     }
     &_tw:hover {
-      color: #356fec;
+      --socialstroke-color: #356fec;
       transform: scale(1.2);
     }
     &_wa:hover {
-      color: #21df1a;
+      --socialstroke-color: #21df1a;
       transform: scale(1.2);
     }
   }

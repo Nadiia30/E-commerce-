@@ -500,13 +500,15 @@ ul {
     line-height: 31px;
     margin-bottom: 14px;
   }
-  &__item {
-    color: $headerBgColor;
-  }
+  // &__item {
+  //   color: $headerBgColor;
+  // }
   &__icon {
     width: 35px;
     height: 35px;
     margin-right: 10px;
+    --icon-color: #fff;
+    --socialstroke-color: #2b2835;
   }
 }
 
